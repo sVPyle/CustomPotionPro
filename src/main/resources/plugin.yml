@@ -1,0 +1,19 @@
+name: CorePhial
+version: 1.0
+main: me.sVPyle.custompotions.CustomPotionsPro
+api-version: '1.21'
+author: sVPyle
+description: Плагин на кастомные зелья, 3D модели и артефакты.
+softdepend: [PlaceholderAPI, HeadDatabase]
+
+commands:
+  cp:
+    description: Главная команда плагина.
+    permission: custompotions.admin
+    usage: "/cp <subcommand>" # Сообщение, если игрок ввел команду неверно
+    aliases: [cyp, pots, custompotion, custom_potion] # Псевдонимы (короткие варианты команды)
+
+permissions:
+  custompotions.admin:
+    description: Доступ к командам администратора.
+    default: op

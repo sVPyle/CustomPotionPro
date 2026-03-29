@@ -1,0 +1,96 @@
+#
+
+plugin:
+  prefix: "<gradient:#4facfe:#00f2fe>[CorePhial]</gradient> "
+
+potions:
+  # Все следующие предметы тестовые, они написаны для наглядного примера написания config.yml
+  # используйте их как хотите, но при первом запуске сервера с этим плагином лучше оставьте
+  # текущие настройки конфига чтобы проверить работоспособность плагина именно на вашем сервере
+  # и с вашей версией (напоминаю что самая стабильная версия 1.21.X, а сам плагин тестировался
+  # на новейшей 1.21.11)
+  # 1. АРТЕФАКТ: ОКО ПУСТОТЫ (Пример с головой, аурой и рандомом)
+  VoidEye:
+    Name: "<gradient:#4b0082:#000000><bold>👁 Око Пустоты</bold></gradient>"
+    Lore:
+      - ""
+      - "<gray>Древний артефакт, пульсирующий тьмой."
+      - ""
+      - "<#7b68ee>● </#7b68ee><gray>Пассивно: <white>Ночное зрение"
+      - "<#7b68ee>● </#7b68ee><gray>При использовании: <white>Случайный дар"
+    Hand-Settings:
+      MainHand: true # Работает в правой руке
+      OffHand: true # Работает в левой руке
+
+    Material: PLAYER_HEAD # Материал
+    # Если Material установлен PLAYER_HEAD то вы можете установить Value для отображения
+    # кастомной головы (ищите у голов на сайтах по типу https://minecraft-heads.com/)
+    Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjMwNTNiMWE3NmRiY2U1ZDczOTk2YzU1MTNkMGE5MmYyYzZjZGM0YTdiN2Y1NzkzNzFmN2ExNDg4Y2ZlZDY5NiJ9fX0="
+
+    Rarity: "EPIC"
+    Enchanted-Glint: true
+    Make-Edible: true
+    Eat-Time: 0.8         # Быстрая активация
+    Infinite: true        # Бесконечный
+
+    Sound: "ENTITY_ENDERMAN_TELEPORT"
+    temporary-ban: 15     # Кулдаун 15 сек.
+
+    # Эффекты системы частиц
+    Particles:
+      Aura: "SOUL_FIRE_FLAME"  # Синие огни вокруг игрока в руке
+      Burst: "PORTAL"          # Всплеск портала при активации
+      Count: 60
+
+    Passive-Effects:
+      - "NIGHT_VISION:1"
+
+    Random-Effect: true
+    Effect:
+      - "REGENERATION:10:3"
+      - "INVISIBILITY:20:1"
+      - '/tellraw %player% {"text":"<purple>Пустота шепчет вам секреты..."}'
+      - "/execute at %player% run summon lightning_bolt ~ ~ ~"
+
+    Craft:
+      enabled: true
+      items: { 4: "nether_star", 1: "ender_eye" }
+
+  # 2. АРТЕФАКТ: КРОВЬ ГЕРОЯ (Пример с 3D моделью и аурой крови)
+  HeroBlood:
+    Name: "<gradient:#ff0000:#8b0000>❤ Кровь Героя</gradient>"
+    Lore:
+      - "<gray>Дарует невероятную силу на время."
+
+    Material: POTION
+    Type: NORMAL
+    Color: "200, 0, 0"
+    model-id: 1001 # ID для вашего ресурспака
+    Rarity: "RARE"
+
+    Make-Edible: true
+    Eat-Time: 1.6         # Стандартное время питья
+    Infinite: false       # Одноразовое
+
+    Sound: "ENTITY_GENERIC_DRINK"
+    temporary-ban: 5
+
+    Particles:
+      Aura: "DAMAGE_INDICATOR" # Частицы сердечек/критов вокруг
+      Burst: "FLAME"           # Взрыв огня при выпивании
+      Count: 40
+
+    Effect:
+      - "INCREASE_DAMAGE:30:2"
+      - "SPEED:30:1"
+      - "/title %player% actionbar {\"text\":\"§c§lЯРОСТЬ АКТИВИРОВАНА\"}"
+
+  # 3. Зелье для PvP
+  SuperGas:
+    Name: "<#ff5555>Токсичное Облако"
+    Material: POTION
+    Type: SPLASH # Станет туманным зельем
+    Color: "50, 100, 0"
+    Effect:
+      - "POISON:10:2"
+      - "HUNGER:15:3"

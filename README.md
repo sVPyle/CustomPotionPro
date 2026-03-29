@@ -1,8 +1,8 @@
 # 🧪 CustomPotionsPro [1.21.X]
 
-[![README](https://img.shields.io/badge/GitHub-README-red?logo=github)](https://github.com/user-attachments/files/26330623/README.md)
-
 [![Java](https://img.shields.io/badge/Java_21-FF1111?style=flat-square&logo=Javascript&logoColor=white)]()
+
+[![Platform](https://img.shields.io/badge/GitHub-gray?logo=github)](https://github.com/sVPyle/CustomPotionPro)
 
 **CustomPotionsPro** — это ультимативный фреймворк для создания уникальных RPG-артефактов, магических эссенций и предметов с кастомными 3D-моделями. Используя мощь компонентов Minecraft 1.21.1, плагин позволяет переосмыслить систему предметов на вашем сервере.
 
